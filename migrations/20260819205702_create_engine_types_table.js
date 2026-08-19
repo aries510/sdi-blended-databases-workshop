@@ -5,7 +5,7 @@
 exports.up = function(knex) {
   return knex.schema
     .createTable('engine_types', function(table) {
-        table.increments('id');
+        table.increments('id').primary();
         table.integer('cylinders');
         table.string('fuel_type');
     })

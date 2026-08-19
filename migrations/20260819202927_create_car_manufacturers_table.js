@@ -5,7 +5,7 @@
 exports.up = function(knex) {
     return knex.schema
         .createTable('car_manufacturers', function(table) {
-          table.increments('id');
+          table.increments('id').primary();
           table.string('name').notNullable();  
         })
     

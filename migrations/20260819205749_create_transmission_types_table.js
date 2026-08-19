@@ -5,7 +5,7 @@
 exports.up = function(knex) {
   return knex.schema
     .createTable('transmission_types', function(table) {
-        table.increments('id');
+        table.increments('id').primary();
         table.string('type').notNullable();
         table.integer('number_of_gears').notNullable;
     })
