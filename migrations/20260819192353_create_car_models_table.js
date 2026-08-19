@@ -28,7 +28,10 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
     return knex.schema.alterTable('car_models', table => {
-        table.dropForeign('manufacturer_id')
+        table.dropForeign('manufacturer_id');
+        table.dropForeign('engine_id');
+        table.dropForeign('transmission_id');
+        table.dropForeign('drivetrain_id');
     })
     .then(function() { 
         return knex.schema.dropTableIfExists('car_models')
