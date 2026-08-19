@@ -11,13 +11,13 @@ exports.up = function(knex) {
         table.string('name').notNullable();
         table.string('chassis_code');
         table.string('years_produced')
-        table.string('engine');
-        table.foreign('engine').references('engine_types.id')
+        table.string('engine_id');
+        table.foreign('engine_id').references('engine_types.id')
         table.decimal('engine_size_in_liters')
-        table.string('transmission');
-        table.foreign('transmission').references('transmission_types.id');
-        table.string('drivetrain');
-        table.foreign('drivertrain').references('drivetrain_types.id')
+        table.string('transmission_id');
+        table.foreign('transmission_id').references('transmission_types.id');
+        table.string('drivetrain_id');
+        table.foreign('drivertrain_id').references('drivetrain_types.id')
         table.integer('hp');
     });
 };
